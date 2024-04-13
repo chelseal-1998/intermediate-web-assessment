@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "io.freefair.lombok" version "8.6"
 }
 
 group 'org.example'
@@ -10,10 +11,14 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation group: 'org.testng', name: 'testng', version: '7.10.1'
+    testImplementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.8.0'
+    testImplementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.19.1'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
+    annotationProcessor "org.projectlombok:lombok:1.18.32"
+    implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.27.0'
 }
 
 test {
-    useJUnitPlatform()
+    useTestNG()
 }
