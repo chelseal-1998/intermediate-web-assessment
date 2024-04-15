@@ -40,9 +40,8 @@ public class TemplatesPage extends BasePage {
     public List<String> getListOfTemplates() {
         List<String> defaultListOfTemplates = new ArrayList<>();
 
-        for (int i = 0; i < templates.size(); i++) {
-            defaultListOfTemplates.add(templates.get(i).getText());
-
+        for (WebElement templateName : templates) {
+            defaultListOfTemplates.add(templateName.getText());
         }
         return defaultListOfTemplates;
     }

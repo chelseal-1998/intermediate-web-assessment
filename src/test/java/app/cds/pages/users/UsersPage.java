@@ -33,8 +33,8 @@ public class UsersPage extends BasePage {
     public List<String> getListOfUsers() {
         List<String> filteredListOfUsers = new ArrayList<>();
 
-        for (int i = 0; i < users.size(); i++) {
-            filteredListOfUsers.add(users.get(i).getText());
+        for (WebElement user : users) {
+            filteredListOfUsers.add(user.getText());
         }
         return filteredListOfUsers;
     }
